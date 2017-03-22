@@ -1,0 +1,37 @@
+{
+  "name": "angular2rock",
+  "version": "0.0.1",
+  "description": "angular with webpack and node js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "build:tsc": "tsc app.ts",
+    "develop": "cross-env NODE_ENV=development npm run build:tsc && npm run start development 3001",
+    "prodution": "rimraf dist && cross-env NODE_ENV=production npm run build:tsc && npm run start production 3001"
+  },
+  "keywords": [
+    "webpack",
+    "angular2",
+    "node",
+    "typescript",
+    "es6"
+  ],
+  "author": "vipin",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.5",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.1",
+    "redis": "^2.7.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.35",
+    "cross-env": "^3.2.4",
+    "rimraf": "^2.6.1",
+    "webpack": "^2.3.1"
+  }
+}

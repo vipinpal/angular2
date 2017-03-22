@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "module": "commonjs",
+    "experimentalDecorators": true
+  },
+  "exclude": ["node_modules", "config", "developmentServer.js"]
+}

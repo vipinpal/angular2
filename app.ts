@@ -28,10 +28,12 @@ app.use(require("webpack-hot-middleware")(compiler));
 
 Router.use(app);
 
-RedisConnection.connectRedis((redisError, redisResult) => {
-  if (redisError) return console.log(redisError);
-  app.listen(port, (error, result) => {
+// RedisConnection.connectRedis((redisError, redisResult) => {
+//   if (redisError) return console.log(redisError);
+ 
+// });
+
+ app.listen(port, (error, result) => {
     if (error) return console.log(error);
     console.log(`your server is start on port ${port}`);
   });
-});

@@ -3,6 +3,7 @@
 const express = require("express");
 const webpack = require("webpack");
 const path = require("path");
+const bodyParser = require("body-parser");
 
 import { Router } from "./server/indexRoute";
 import { RedisConnection } from "./server/db/redisDb";
@@ -25,12 +26,16 @@ app.use(require("webpack-dev-middleware")(compiler, {
 }));
 app.use("/assets", express.static(path.join(__dirname, "./src/assets")));
 app.use(require("webpack-hot-middleware")(compiler));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 Router.use(app);
 
 // RedisConnection.connectRedis((redisError, redisResult) => {
 //   if (redisError) return console.log(redisError);
- 
+
 // });
 
  app.listen(port, (error, result) => {
